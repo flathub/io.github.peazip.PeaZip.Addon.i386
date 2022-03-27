@@ -9,9 +9,6 @@ build-extension: true
 separate-locales: false
 appstream-compose: false
 
-finish-args:
-  - "--metadata=Extra Data=NoRuntime=false"
-
 build-options:
   prefix: /app/Addon/i386
   env:
