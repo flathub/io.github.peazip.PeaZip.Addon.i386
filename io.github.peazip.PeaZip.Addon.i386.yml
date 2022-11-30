@@ -87,26 +87,14 @@ modules:
         url: https://downloads.sourceforge.net/project/peazip/Resources/PeaZip%20Additional%20Formats%20Plugin/peazip_additional_formats_plugin-LINUX-4.7z
         sha256: 49a2681f99b1d7c2e2156b09884adbfd23b06e12e3176cc04f35099ed822cd98
 
-  - name: extra-unace
+  - name: unace
     buildsystem: simple
     build-commands:
-      - install -Dm755 apply_extra -t ${FLATPAK_DEST}/bin
-      - install -Dm755 /usr/bin/ar -t ${FLATPAK_DEST}/bin
-      - install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t ${FLATPAK_DEST}/lib
-      - cd ${FLATPAK_DEST}/formats && ln -sv ../extra/unace unace
+      - cp -a unace ${FLATPAK_DEST}/formats/
     sources:
-      - type: script
-        dest-filename: apply_extra
-        commands:
-          - ar x *.deb $(ar t *.deb|grep data) && tar -xaf data.* && rm data.* *.deb
-          - install -D -t unace usr/local/share/PeaZip/res/unace/*
-          - rm -rf usr
-
-      - type: extra-data
-        filename: unace.deb
-        url: https://downloads.sourceforge.net/project/peazip/Resources/PeaZip%20UNACE%20Plugin/peazip-unace-plugin-linux_3-2_all.deb
-        sha256: 66f160322820799a7a803aeaf0f73cf367350667ea7f5f76e962de03cf6b0c22
-        size: 203740
+      - type: archive
+        url: https://downloads.sourceforge.net/project/peazip/Resources/PeaZip%20UNACE%20Plugin/peazip_unace_plugin-1.LINUX.ALL.tar.gz
+        sha256: 40b9c873e40d576d0c1bb08e35834b18cc26290c3288f1cd4ec7edc4a646f57a
 
   - name: script
     buildsystem: simple
