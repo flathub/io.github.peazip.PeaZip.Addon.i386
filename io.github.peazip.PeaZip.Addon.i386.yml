@@ -93,6 +93,7 @@ modules:
       - cp -a unace ${FLATPAK_DEST}/formats/
     sources:
       - type: archive
+        strip-components: 0
         url: https://downloads.sourceforge.net/project/peazip/Resources/PeaZip%20UNACE%20Plugin/peazip_unace_plugin-1.LINUX.ALL.tar.gz
         sha256: 40b9c873e40d576d0c1bb08e35834b18cc26290c3288f1cd4ec7edc4a646f57a
 
