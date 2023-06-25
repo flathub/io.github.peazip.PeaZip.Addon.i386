@@ -38,12 +38,8 @@ modules:
       - '*.a'
     sources:
       - type: archive
-        url: https://invisible-mirror.net/archives/ncurses/ncurses-6.3.tar.gz
-        sha256: 97fc51ac2b085d4cde31ef4d2c3122c21abc217e9090a43a30fc5ec21684e059
-        x-checker-data:
-          type: anitya
-          project-id: 234776
-          url-template: https://invisible-mirror.net/archives/ncurses/ncurses-$version.tar.gz
+        url: https://invisible-mirror.net/archives/ncurses/ncurses-6.4.tar.gz
+        sha256: 6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159
 
   - name: gmp
     build-options: *compat_i386_opts
@@ -70,7 +66,7 @@ modules:
   - name: ia32
     buildsystem: simple
     build-commands:
-      - 7z x addition.7z > /dev/null
+      - bsdtar -xf addition.tar
       - chmod 755 -R .
       - mkdir -p ${FLATPAK_DEST}/formats
       - mv peazip*/{arc,lpaq,paq,quad,zpaq} ${FLATPAK_DEST}/formats
@@ -83,9 +79,9 @@ modules:
 
     sources:
       - type: file
-        dest-filename: addition.7z
-        url: https://downloads.sourceforge.net/project/peazip/Resources/PeaZip%20Additional%20Formats%20Plugin/peazip_additional_formats_plugin-LINUX-4.7z
-        sha256: 49a2681f99b1d7c2e2156b09884adbfd23b06e12e3176cc04f35099ed822cd98
+        dest-filename: addition.tar
+        url: https://downloads.sourceforge.net/project/peazip/Resources/PeaZip%20Additional%20Formats%20Plugin/peazip-additional-formats-plugin.5.LINUX.tar
+        sha256: 837c68362cb5d258f91216aebfee5716677b77465361adf21f5cc4660d99a759
 
   - name: unace
     buildsystem: simple
