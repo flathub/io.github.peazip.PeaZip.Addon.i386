@@ -1,7 +1,7 @@
 app-id: io.github.peazip.PeaZip.Addon.i386
 runtime: io.github.peazip.PeaZip
 runtime-version: stable
-sdk: org.freedesktop.Sdk//22.08
+sdk: org.freedesktop.Sdk//23.08
 sdk-extensions:
   - org.freedesktop.Sdk.Compat.i386
   - org.freedesktop.Sdk.Extension.toolchain-i386
