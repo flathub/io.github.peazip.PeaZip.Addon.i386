@@ -56,8 +56,8 @@ modules:
       - '*.la'
     sources:
       - type: archive
-        url: https://gmplib.org/download/gmp/gmp-6.2.1.tar.xz
-        sha256: fd4829912cddd12f84181c3451cc752be224643e87fac497b69edddadc49b4f2
+        url: https://gmplib.org/download/gmp/gmp-6.3.0.tar.xz
+        sha256: cddfc2716e88fa1a1df2f7c95ac4c38de6f58585ae4f2af427be152f2f0c49c4
         x-checker-data:
           type: anitya
           project-id: 1186
